@@ -1,146 +1,16 @@
 <!DOCTYPE html>
 
-<html lang="ja"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>おすすめゲーム｜検索結果</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        font-family: Arial, "Noto Sans JP", sans-serif;
-        background: #0b1928;
-        color: #e8f0f7;
-        line-height: 1.6;
-    }
-
-    .page {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-        max-width: 1500px;
-        margin: 0 auto;
-    }
-
-    .side-ad {
-        width: 160px;
-        min-width: 160px;
-        height: 600px;
-        margin-top: 40px;
-    }
-
-    .main {
-        width: min(900px, 100%);
-        padding: 50px 0 80px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 44px;
-        margin: 0 0 15px;
-    }
-
-    .description {
-        text-align: center;
-        color: #b8c7d4;
-        font-size: 20px;
-        margin: 0 0 40px;
-    }
-
-    .result-card {
-        background: #13283b;
-        border: 1px solid #24445d;
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 20px;
-    }
-
-    .result-card h2 {
-        margin: 0 0 15px;
-        font-size: 24px;
-    }
-
-    .info {
-        background: #0d1e2e;
-        border-radius: 8px;
-        padding: 15px;
-        margin-top: 10px;
-    }
-
-    .game-card {
-        background: #0d1e2e;
-        border: 1px solid #29475e;
-        border-radius: 10px;
-        padding: 18px;
-        margin-top: 12px;
-    }
-
-    .game-card h3 {
-        margin: 0 0 8px;
-        font-size: 19px;
-    }
-
-    .game-card p {
-        margin: 5px 0;
-        color: #b8c7d4;
-    }
-
-    .back-button {
-        display: block;
-        width: min(500px, 100%);
-        margin: 35px auto 0;
-        padding: 16px;
-        border: none;
-        border-radius: 10px;
-        background: #1b75b5;
-        color: white;
-        font-size: 17px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .back-button:hover {
-        background: #258ed0;
-    }
-
-    @media (max-width: 1150px) {
-
-        .side-ad {
-            display: none;
-        }
-
-        .page {
-            width: 100%;
-        }
-
-        .main {
-            width: min(900px, 92%);
-        }
-    }
-
-    @media (max-width: 650px) {
-
-        .main {
-            padding-top: 35px;
-        }
-
-        h1 {
-            font-size: 32px;
-        }
-
-        .description {
-            font-size: 17px;
-        }
-
-        .result-card {
-            padding: 20px;
-        }
-    }
-</style>
+<style> * { box-sizing: border-box; } body { margin: 0; font-family: Arial, "Noto Sans JP", sans-serif; background: #0b1928; color: #e8f0f7; line-height: 1.6; } .page { display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1500px; margin: 0 auto; } .side-ad { width: 160px; min-width: 160px; height: 600px; margin-top: 40px; } .main { width: min(900px, 100%); padding: 50px 0 80px; } h1 { text-align: center; font-size: 44px; margin: 0 0 15px; } .description { text-align: center; color: #b8c7d4; font-size: 20px; margin: 0 0 40px; } .result-card { background: #13283b; border: 1px solid #24445d; border-radius: 12px; padding: 25px; margin-bottom: 20px; } .result-card h2 { margin: 0 0 20px; font-size: 24px; } .game-card { background: #0d1e2e; border: 1px solid #29475e; border-radius: 10px; padding: 20px; margin-top: 15px; } .game-card h3 { margin: 0 0 12px; font-size: 22px; } .game-card p { margin: 6px 0; color: #b8c7d4; } .score { font-size: 18px; font-weight: bold; margin-bottom: 12px; } .steam-link { display: inline-block; margin-top: 12px; padding: 10px 16px; background: #1b75b5; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; } .steam-link:hover { background: #258ed0; } .info { background: #0d1e2e; border-radius: 8px; padding: 15px; margin-top: 10px; } .back-button { display: block; width: min(500px, 100%); margin: 35px auto 0; padding: 16px; border: none; border-radius: 10px; background: #1b75b5; color: white; font-size: 17px; font-weight: bold; cursor: pointer; } .back-button:hover { background: #258ed0; } @media (max-width: 1150px) { .side-ad { display: none; } .page { width: 100%; } .main { width: min(900px, 92%); } } @media (max-width: 650px) { .main { padding-top: 35px; } h1 { font-size: 32px; } .description { font-size: 17px; } .result-card { padding: 20px; } } </style>
 
 </head>
 
@@ -152,31 +22,23 @@
 
 <main class="main">
 
-    <h1>おすすめSteamゲーム</h1>
+<h1>おすすめSteamゲーム</h1>
 
-    <p class="description">
-        あなたの回答を受け取りました。
-    </p>
+<p class="description"> あなたの回答からおすすめゲームを選びました。 </p>
 
+<section class="result-card">
 
-    <section class="result-card">
+<h2>おすすめゲーム TOP3</h2>
 
-        <h2>検索結果</h2>
+<div id="result"> 読み込み中... </div>
 
-        <div id="result">
-            読み込み中...
-        </div>
+</section>
 
-    </section>
+<button class="back-button" type="button" onclick="location.href='index.html'">
 
+診断ページに戻る
 
-    <button
-        class="back-button"
-        onclick="location.href='index.html'">
-
-        診断ページに戻る
-
-    </button>
+</button>
 
 </main>
 
@@ -184,6 +46,8 @@
 
 </div>
 
-<script> const resultElement = document.getElementById("result"); // Workerから返ってきたテスト結果を取得 const workerResult = localStorage.getItem("workerTestResult"); if (!workerResult) { resultElement.innerHTML = ` <div class="info"> 検索データがありません。 <br> 診断ページからもう一度検索してください。 </div> `; } else { try { const result = JSON.parse(workerResult); const data = result.received; let html = ""; html += ` <div class="info"> <strong>Workerとの通信に成功しました。</strong> </div> `; html += ` <div class="game-card"> <h3>① 一番好きなジャンル</h3> <p>${data.mainGenre || "なし"}</p> </div> `; html += ` <div class="game-card"> <h3>② その他好きなジャンル</h3> <p> ${ data.otherGenres && data.otherGenres.length > 0 ? data.otherGenres.join("、") : "なし" } </p> </div> `; html += ` <div class="game-card"> <h3>③ 苦手なジャンル</h3> <p> ${ data.weakGenres && data.weakGenres.length > 0 ? data.weakGenres.join("、") : "なし" } </p> </div> `; html += ` <div class="game-card"> <h3>④ 価格帯</h3> <p>${data.price || "なし"}</p> </div> `; html += ` <div class="game-card"> <h3>⑤ 遊び方</h3> <p>${data.playStyle || "なし"}</p> </div> `; html += ` <div class="game-card"> <h3>⑥ 好きなゲーム</h3> <p> ${ data.favoriteGames && data.favoriteGames.length > 0 ? data.favoriteGames.join("、") : "なし" } </p> </div> `; html += ` <div class="game-card"> <h3>⑦ 苦手なゲーム</h3> <p> ${ data.weakGames && data.weakGames.length > 0 ? data.weakGames.join("、") : "なし" } </p> </div> `; resultElement.innerHTML = html; } catch (error) { resultElement.innerHTML = ` <div class="info"> 結果データの読み込みに失敗しました。 </div> `; console.error(error); } } </script>
+<script> "use strict"; // ========================================== // 結果表示場所 // ========================================== const resultElement = document.getElementById("result"); // ========================================== // Workerの結果を取得 // ========================================== const workerResult = localStorage.getItem("workerTestResult"); // ========================================== // データがない場合 // ========================================== if (!workerResult) { resultElement.innerHTML = ` <div class="info"> 検索データがありません。<br> 診断ページからもう一度検索してください。 </div> `; } // ========================================== // データがある場合 // ========================================== else { try { const result = JSON.parse(workerResult); // ====================================== // Workerエラー // ====================================== if (!result.success) { throw new Error( result.message || "Workerでエラーが発生しました。" ); } // ====================================== // おすすめゲーム // ====================================== const recommendations = result.recommendations; if ( !Array.isArray(recommendations) || recommendations.length === 0 ) { resultElement.innerHTML = ` <div class="info"> おすすめゲームが見つかりませんでした。 </div> `; } else { let html = ""; recommendations.forEach( function(game, index) { html += ` <div class="game-card"> <h3> ${index + 1}位： ${game.name} </h3> <div class="score"> 相性スコア： ${game.score}点 </div> <p> <strong>ジャンル：</strong> ${ Array.isArray(game.genres) ? game.genres.join("、") : "なし" } </p> <p> <strong>価格：</strong> ${game.price || "不明"} </p> <p> <strong>遊び方：</strong> ${ Array.isArray(game.playStyle) ? game.playStyle.join("、") : "なし" } </p> <p> <strong>Steam App ID：</strong> ${game.appid} </p> <a class="steam-link" href="https://store.steampowered.com/app/${game.appid}/" target="_blank" rel="noopener noreferrer"> Steamでゲームを見る </a> </div> `; } ); resultElement.innerHTML = html; } } catch (error) { console.error(error); resultElement.innerHTML = ` <div class="info"> 結果データの読み込みに失敗しました。 <br><br> ${error.message} </div> `; } } </script>
 
-</body> </html>
+</body>
+
+</html>
