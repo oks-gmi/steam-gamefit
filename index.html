@@ -4,267 +4,7 @@
 
 <title>おすすめSteamゲーム</title>
 
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-        font-family: Arial, "Noto Sans JP", sans-serif;
-        background: #0b1928;
-        color: #e8f0f7;
-        line-height: 1.6;
-    }
-
-    .page {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-        max-width: 1500px;
-        margin: 0 auto;
-    }
-
-    .side-ad {
-        width: 160px;
-        min-width: 160px;
-        height: 600px;
-        margin-top: 40px;
-    }
-
-    .main {
-        width: min(900px, 100%);
-        padding: 50px 0 80px;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 44px;
-        margin: 0 0 15px;
-        font-weight: bold;
-    }
-
-    .description {
-        text-align: center;
-        color: #b8c7d4;
-        font-size: 20px;
-        margin: 0 0 45px;
-    }
-
-    .section {
-        background: #13283b;
-        border: 1px solid #24445d;
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 25px;
-    }
-
-    .section h2 {
-        font-size: 21px;
-        margin: 0 0 10px;
-    }
-
-    .section-note {
-        color: #aebdca;
-        font-size: 14px;
-        margin: 0 0 18px;
-    }
-
-    .choices {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .choice {
-        position: relative;
-    }
-
-    .choice input {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .choice label {
-        display: block;
-        padding: 10px 17px;
-        border: 1px solid #355873;
-        border-radius: 8px;
-        background: #102235;
-        color: #dce8f1;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    .choice label:hover {
-        border-color: #66a7d9;
-        background: #17334b;
-    }
-
-    .choice input:checked + label {
-        background: #1b6ca8;
-        border-color: #63b5ed;
-        color: #ffffff;
-    }
-
-    .price-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-
-    .play-style {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-
-    .play-choice label {
-        text-align: center;
-        padding: 17px 10px;
-        font-size: 16px;
-    }
-
-    .game-search {
-        display: flex;
-        gap: 10px;
-    }
-
-    .game-search input {
-        flex: 1;
-        padding: 13px;
-        border-radius: 8px;
-        border: 1px solid #355873;
-        background: #0d1e2e;
-        color: white;
-        font-size: 16px;
-        outline: none;
-    }
-
-    .game-search input:focus {
-        border-color: #63b5ed;
-    }
-
-    .search-button {
-        border: none;
-        border-radius: 8px;
-        padding: 0 22px;
-        background: #1b6ca8;
-        color: white;
-        font-size: 15px;
-        cursor: pointer;
-    }
-
-    .search-button:hover {
-        background: #2585c7;
-    }
-
-    .selected-games {
-        margin-top: 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .selected-game {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: #0d1e2e;
-        border: 1px solid #29475e;
-        padding: 10px 14px;
-        border-radius: 7px;
-    }
-
-    .remove-game {
-        border: none;
-        background: transparent;
-        color: #ff8585;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .submit-area {
-        margin-top: 35px;
-        text-align: center;
-    }
-
-    .submit-button {
-        width: min(600px, 100%);
-        padding: 18px;
-        border: none;
-        border-radius: 10px;
-        background: #1b75b5;
-        color: white;
-        font-size: 19px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.2s;
-    }
-
-    .submit-button:hover {
-        background: #258ed0;
-        transform: translateY(-1px);
-    }
-
-    .bottom-ad {
-        width: 100%;
-        min-height: 120px;
-        margin-top: 40px;
-    }
-
-    @media (max-width: 1150px) {
-
-        .side-ad {
-            display: none;
-        }
-
-        .page {
-            width: 100%;
-        }
-
-        .main {
-            width: min(900px, 92%);
-        }
-    }
-
-    @media (max-width: 650px) {
-
-        .main {
-            padding-top: 35px;
-        }
-
-        h1 {
-            font-size: 32px;
-        }
-
-        .description {
-            font-size: 17px;
-        }
-
-        .price-list {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .play-style {
-            grid-template-columns: 1fr;
-        }
-
-        .game-search {
-            flex-direction: column;
-        }
-
-        .search-button {
-            padding: 12px;
-        }
-
-        .section {
-            padding: 20px;
-        }
-    }
-</style>
+<style> * { box-sizing: border-box; } body { margin: 0; font-family: Arial, "Noto Sans JP", sans-serif; background: #0b1928; color: #e8f0f7; line-height: 1.6; } .page { display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1500px; margin: 0 auto; } .side-ad { width: 160px; min-width: 160px; height: 600px; margin-top: 40px; } .main { width: min(900px, 100%); padding: 50px 0 80px; } h1 { text-align: center; font-size: 44px; margin: 0 0 15px; } .description { text-align: center; color: #b8c7d4; font-size: 20px; margin: 0 0 45px; } .section { background: #13283b; border: 1px solid #24445d; border-radius: 12px; padding: 25px; margin-bottom: 25px; } .section h2 { font-size: 21px; margin: 0 0 10px; } .section-note { color: #aebdca; font-size: 14px; margin: 0 0 18px; } .choices { display: flex; flex-wrap: wrap; gap: 10px; } .choice { position: relative; } .choice input { position: absolute; opacity: 0; pointer-events: none; } .choice label { display: block; padding: 10px 17px; border: 1px solid #355873; border-radius: 8px; background: #102235; color: #dce8f1; cursor: pointer; transition: 0.2s; } .choice label:hover { border-color: #66a7d9; background: #17334b; } .choice input:checked + label { background: #1b6ca8; border-color: #63b5ed; color: #ffffff; } .price-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } .play-style { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } .play-choice label { text-align: center; padding: 17px 10px; } .game-search { display: flex; gap: 10px; } .game-search input { flex: 1; padding: 13px; border-radius: 8px; border: 1px solid #355873; background: #0d1e2e; color: white; font-size: 16px; outline: none; } .search-button { border: none; border-radius: 8px; padding: 0 22px; background: #1b6ca8; color: white; font-size: 15px; cursor: pointer; } .search-button:hover { background: #2585c7; } .selected-games { margin-top: 15px; display: flex; flex-direction: column; gap: 8px; } .selected-game { display: flex; justify-content: space-between; align-items: center; background: #0d1e2e; border: 1px solid #29475e; padding: 10px 14px; border-radius: 7px; } .remove-game { border: none; background: transparent; color: #ff8585; cursor: pointer; } .submit-area { margin-top: 35px; text-align: center; } .submit-button { width: min(600px, 100%); padding: 18px; border: none; border-radius: 10px; background: #1b75b5; color: white; font-size: 19px; font-weight: bold; cursor: pointer; } .submit-button:hover { background: #258ed0; } .bottom-ad { width: 100%; min-height: 120px; margin-top: 40px; } @media (max-width: 1150px) { .side-ad { display: none; } .page { width: 100%; } .main { width: min(900px, 92%); } } @media (max-width: 650px) { .main { padding-top: 35px; } h1 { font-size: 32px; } .description { font-size: 17px; } .price-list { grid-template-columns: repeat(2, 1fr); } .play-style { grid-template-columns: 1fr; } .game-search { flex-direction: column; } .search-button { padding: 12px; } .section { padding: 20px; } } </style>
 
 </head>
 
@@ -276,323 +16,213 @@
 
 <main class="main">
 
-    <h1>おすすめSteamゲーム</h1>
-
-    <p class="description">
-        あなたに合ったSteamゲームを探します。
-    </p>
-
-    <!-- ① 一番好きなゲームジャンル -->
-    <section class="section">
+<h1>おすすめSteamゲーム</h1>
 
-        <h2>① 一番好きなゲームジャンル</h2>
-
-        <p class="section-note">
-            一番好きなゲームジャンルを1つ選択してください。
-        </p>
-
-        <div class="choices">
+<p class="description"> あなたに合ったSteamゲームを探します。 </p>
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="rpg" value="RPG">
-                <label for="rpg">RPG</label>
-            </div>
+<!-- ① -->
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="action" value="アクション">
-                <label for="action">アクション</label>
-            </div>
+<section class="section">
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="horror" value="ホラー">
-                <label for="horror">ホラー</label>
-            </div>
+<h2>① 一番好きなゲームジャンル</h2>
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="survival" value="サバイバル">
-                <label for="survival">サバイバル</label>
-            </div>
+<p class="section-note"> 一番好きなゲームジャンルを1つ選択してください。 </p>
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="simulation" value="シミュレーション">
-                <label for="simulation">シミュレーション</label>
-            </div>
+<div class="choices">
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="strategy" value="ストラテジー">
-                <label for="strategy">ストラテジー</label>
-            </div>
+<div class="choice"> <input type="radio" name="mainGenre" value="RPG" id="mainRPG"> <label for="mainRPG">RPG</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="adventure" value="アドベンチャー">
-                <label for="adventure">アドベンチャー</label>
-            </div>
+<div class="choice"> <input type="radio" name="mainGenre" value="アクション" id="mainAction"> <label for="mainAction">アクション</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="mainGenre" id="puzzle" value="パズル">
-                <label for="puzzle">パズル</label>
-            </div>
+<div class="choice"> <input type="radio" name="mainGenre" value="ホラー" id="mainHorror"> <label for="mainHorror">ホラー</label> </div>
 
-        </div>
-    </section>
+<div class="choice"> <input type="radio" name="mainGenre" value="サバイバル" id="mainSurvival"> <label for="mainSurvival">サバイバル</label> </div>
 
+<div class="choice"> <input type="radio" name="mainGenre" value="シミュレーション" id="mainSimulation"> <label for="mainSimulation">シミュレーション</label> </div>
 
-    <!-- ② その他好きなジャンル -->
-    <section class="section">
+<div class="choice"> <input type="radio" name="mainGenre" value="ストラテジー" id="mainStrategy"> <label for="mainStrategy">ストラテジー</label> </div>
 
-        <h2>② その他、好きなゲームジャンル</h2>
-
-        <p class="section-note">
-            好きなジャンルを複数選択できます。
-        </p>
-
-        <div class="choices">
+<div class="choice"> <input type="radio" name="mainGenre" value="アドベンチャー" id="mainAdventure"> <label for="mainAdventure">アドベンチャー</label> </div>
 
-            <div class="choice">
-                <input type="checkbox" id="otherRpg" value="RPG">
-                <label for="otherRpg">RPG</label>
-            </div>
+<div class="choice"> <input type="radio" name="mainGenre" value="パズル" id="mainPuzzle"> <label for="mainPuzzle">パズル</label> </div>
 
-            <div class="choice">
-                <input type="checkbox" id="otherAction" value="アクション">
-                <label for="otherAction">アクション</label>
-            </div>
+</div>
 
-            <div class="choice">
-                <input type="checkbox" id="otherHorror" value="ホラー">
-                <label for="otherHorror">ホラー</label>
-            </div>
+</section>
 
-            <div class="choice">
-                <input type="checkbox" id="otherSurvival" value="サバイバル">
-                <label for="otherSurvival">サバイバル</label>
-            </div>
+<!-- ② -->
 
-            <div class="choice">
-                <input type="checkbox" id="otherSimulation" value="シミュレーション">
-                <label for="otherSimulation">シミュレーション</label>
-            </div>
+<section class="section">
 
-            <div class="choice">
-                <input type="checkbox" id="otherStrategy" value="ストラテジー">
-                <label for="otherStrategy">ストラテジー</label>
-            </div>
+<h2>② その他、好きなゲームジャンル</h2>
 
-            <div class="choice">
-                <input type="checkbox" id="otherAdventure" value="アドベンチャー">
-                <label for="otherAdventure">アドベンチャー</label>
-            </div>
+<p class="section-note"> 好きなジャンルを複数選択できます。 </p>
 
-            <div class="choice">
-                <input type="checkbox" id="otherPuzzle" value="パズル">
-                <label for="otherPuzzle">パズル</label>
-            </div>
+<div class="choices">
 
-        </div>
-    </section>
+<div class="choice"> <input type="checkbox" value="RPG" id="otherRPG"> <label for="otherRPG">RPG</label> </div>
 
+<div class="choice"> <input type="checkbox" value="アクション" id="otherAction"> <label for="otherAction">アクション</label> </div>
 
-    <!-- ③ 苦手なゲームジャンル -->
-    <section class="section">
+<div class="choice"> <input type="checkbox" value="ホラー" id="otherHorror"> <label for="otherHorror">ホラー</label> </div>
 
-        <h2>③ 苦手なゲームジャンル</h2>
+<div class="choice"> <input type="checkbox" value="サバイバル" id="otherSurvival"> <label for="otherSurvival">サバイバル</label> </div>
 
-        <p class="section-note">
-            苦手なゲームジャンルを複数選択できます。
-        </p>
+<div class="choice"> <input type="checkbox" value="シミュレーション" id="otherSimulation"> <label for="otherSimulation">シミュレーション</label> </div>
 
-        <div class="choices">
+<div class="choice"> <input type="checkbox" value="ストラテジー" id="otherStrategy"> <label for="otherStrategy">ストラテジー</label> </div>
 
-            <div class="choice">
-                <input type="checkbox" id="weakRpg" value="RPG">
-                <label for="weakRpg">RPG</label>
-            </div>
+<div class="choice"> <input type="checkbox" value="アドベンチャー" id="otherAdventure"> <label for="otherAdventure">アドベンチャー</label> </div>
 
-            <div class="choice">
-                <input type="checkbox" id="weakAction" value="アクション">
-                <label for="weakAction">アクション</label>
-            </div>
+<div class="choice"> <input type="checkbox" value="パズル" id="otherPuzzle"> <label for="otherPuzzle">パズル</label> </div>
 
-            <div class="choice">
-                <input type="checkbox" id="weakHorror" value="ホラー">
-                <label for="weakHorror">ホラー</label>
-            </div>
+</div>
 
-            <div class="choice">
-                <input type="checkbox" id="weakSurvival" value="サバイバル">
-                <label for="weakSurvival">サバイバル</label>
-            </div>
+</section>
 
-            <div class="choice">
-                <input type="checkbox" id="weakSimulation" value="シミュレーション">
-                <label for="weakSimulation">シミュレーション</label>
-            </div>
+<!-- ③ -->
 
-            <div class="choice">
-                <input type="checkbox" id="weakStrategy" value="ストラテジー">
-                <label for="weakStrategy">ストラテジー</label>
-            </div>
+<section class="section">
 
-            <div class="choice">
-                <input type="checkbox" id="weakAdventure" value="アドベンチャー">
-                <label for="weakAdventure">アドベンチャー</label>
-            </div>
+<h2>③ 苦手なゲームジャンル</h2>
 
-            <div class="choice">
-                <input type="checkbox" id="weakPuzzle" value="パズル">
-                <label for="weakPuzzle">パズル</label>
-            </div>
+<p class="section-note"> 苦手なゲームジャンルを複数選択できます。 </p>
 
-        </div>
-    </section>
+<div class="choices">
 
+<div class="choice"> <input type="checkbox" value="RPG" id="weakRPG"> <label for="weakRPG">RPG</label> </div>
 
-    <!-- ④ 価格帯 -->
-    <section class="section">
+<div class="choice"> <input type="checkbox" value="アクション" id="weakAction"> <label for="weakAction">アクション</label> </div>
 
-        <h2>④ 価格帯</h2>
+<div class="choice"> <input type="checkbox" value="ホラー" id="weakHorror"> <label for="weakHorror">ホラー</label> </div>
 
-        <p class="section-note">
-            遊びたいゲームの価格帯を選択してください。
-        </p>
+<div class="choice"> <input type="checkbox" value="サバイバル" id="weakSurvival"> <label for="weakSurvival">サバイバル</label> </div>
 
-        <div class="choices price-list">
+<div class="choice"> <input type="checkbox" value="シミュレーション" id="weakSimulation"> <label for="weakSimulation">シミュレーション</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="price" id="price500" value="500">
-                <label for="price500">～500円</label>
-            </div>
+<div class="choice"> <input type="checkbox" value="ストラテジー" id="weakStrategy"> <label for="weakStrategy">ストラテジー</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="price" id="price1000" value="1000">
-                <label for="price1000">～1,000円</label>
-            </div>
+<div class="choice"> <input type="checkbox" value="アドベンチャー" id="weakAdventure"> <label for="weakAdventure">アドベンチャー</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="price" id="price2000" value="2000">
-                <label for="price2000">～2,000円</label>
-            </div>
+<div class="choice"> <input type="checkbox" value="パズル" id="weakPuzzle"> <label for="weakPuzzle">パズル</label> </div>
 
-            <div class="choice">
-                <input type="radio" name="price" id="price3000" value="3000">
-                <label for="price3000">～3,000円</label>
-            </div>
+</div>
 
-            <div class="choice">
-                <input type="radio" name="price" id="price5000" value="5000">
-                <label for="price5000">～5,000円</label>
-            </div>
+</section>
 
-            <div class="choice">
-                <input type="radio" name="price" id="priceAny" value="any">
-                <label for="priceAny">価格は気にしない</label>
-            </div>
+<!-- ④ -->
 
-        </div>
-    </section>
+<section class="section">
 
+<h2>④ 価格帯</h2>
 
-    <!-- ⑤ 遊び方 -->
-    <section class="section">
+<p class="section-note"> 遊びたいゲームの価格帯を選択してください。 </p>
 
-        <h2>⑤ どんな遊び方が好きですか？</h2>
+<div class="choices price-list">
 
-        <div class="play-style">
+<div class="choice"> <input type="radio" name="price" value="500" id="price500"> <label for="price500">～500円</label> </div>
 
-            <div class="choice play-choice">
-                <input type="radio" name="playStyle" id="play1" value="solo">
-                <label for="play1">1人で</label>
-            </div>
+<div class="choice"> <input type="radio" name="price" value="1000" id="price1000"> <label for="price1000">～1,000円</label> </div>
 
-            <div class="choice play-choice">
-                <input type="radio" name="playStyle" id="play2" value="both">
-                <label for="play2">どちらでも</label>
-            </div>
+<div class="choice"> <input type="radio" name="price" value="2000" id="price2000"> <label for="price2000">～2,000円</label> </div>
 
-            <div class="choice play-choice">
-                <input type="radio" name="playStyle" id="play3" value="multi">
-                <label for="play3">みんなで</label>
-            </div>
+<div class="choice"> <input type="radio" name="price" value="3000" id="price3000"> <label for="price3000">～3,000円</label> </div>
 
-        </div>
-    </section>
+<div class="choice"> <input type="radio" name="price" value="5000" id="price5000"> <label for="price5000">～5,000円</label> </div>
 
+<div class="choice"> <input type="radio" name="price" value="any" id="priceAny"> <label for="priceAny">価格は気にしない</label> </div>
 
-    <!-- ⑥ 好きなゲーム -->
-    <section class="section">
+</div>
 
-        <h2>⑥ 好きなゲーム</h2>
+</section>
 
-        <p class="section-note">
-            今まで遊んだ中で好きなゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。
-        </p>
+<!-- ⑤ -->
 
-        <div class="game-search">
+<section class="section">
 
-            <input
-                type="text"
-                id="favoriteGameInput"
-                placeholder="ゲームタイトルを入力してください"
-            >
+<h2>⑤ どんな遊び方が好きですか？</h2>
 
-            <button
-                class="search-button"
-                onclick="addFavoriteGame()">
-                追加
-            </button>
+<div class="play-style">
 
-        </div>
+<div class="choice play-choice"> <input type="radio" name="playStyle" value="solo" id="playSolo"> <label for="playSolo">1人で</label> </div>
 
-        <div id="favoriteGames" class="selected-games"></div>
+<div class="choice play-choice"> <input type="radio" name="playStyle" value="both" id="playBoth"> <label for="playBoth">どちらでも</label> </div>
 
-    </section>
+<div class="choice play-choice"> <input type="radio" name="playStyle" value="multi" id="playMulti"> <label for="playMulti">みんなで</label> </div>
 
+</div>
 
-    <!-- ⑦ 苦手なゲーム -->
-    <section class="section">
+</section>
 
-        <h2>⑦ 苦手なゲーム</h2>
+<!-- ⑥ -->
 
-        <p class="section-note">
-            今まで遊んだ中で自分に合わなかったと思うゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。
-        </p>
+<section class="section">
 
-        <div class="game-search">
+<h2>⑥ 好きなゲーム</h2>
 
-            <input
-                type="text"
-                id="weakGameInput"
-                placeholder="ゲームタイトルを入力してください"
-            >
+<p class="section-note"> 今まで遊んだ中で好きなゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。 </p>
 
-            <button
-                class="search-button"
-                onclick="addWeakGame()">
-                追加
-            </button>
+<div class="game-search">
 
-        </div>
+<input
+type="text"
+id="favoriteGameInput"
+placeholder="ゲームタイトルを入力してください"
 
-        <div id="weakGames" class="selected-games"></div>
 
-    </section>
 
 
-    <!-- 検索 -->
-    <div class="submit-area">
+<button type="button" class="search-button" id="favoriteAddButton">
+追加
+</button>
 
-        <button
-            class="submit-button"
-            onclick="searchGames()">
+</div>
 
-            この情報でゲームを探す
+<div id="favoriteGames" class="selected-games"></div>
 
-        </button>
+</section>
 
-    </div>
+<!-- ⑦ -->
 
+<section class="section">
 
-    <div class="bottom-ad"></div>
+<h2>⑦ 苦手なゲーム</h2>
+
+<p class="section-note"> 今まで遊んだ中で自分に合わなかったと思うゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。 </p>
+
+<div class="game-search">
+
+<input
+type="text"
+id="weakGameInput"
+placeholder="ゲームタイトルを入力してください"
+
+
+
+
+<button type="button" class="search-button" id="weakAddButton">
+追加
+</button>
+
+</div>
+
+<div id="weakGames" class="selected-games"></div>
+
+</section>
+
+<!-- 検索 -->
+
+<div class="submit-area">
+
+<button type="button" class="submit-button" id="searchButton">
+
+この情報でゲームを探す
+
+</button>
+
+</div>
+
+<div class="bottom-ad"></div>
 
 </main>
 
@@ -600,6 +230,6 @@
 
 </div>
 
-<script> // ========================================== // ゲームタイトル // ========================================== const favoriteGames = []; const weakGames = []; // ========================================== // 好きなゲームを追加 // ========================================== function addFavoriteGame() { const input = document.getElementById("favoriteGameInput"); const gameName = input.value.trim(); if (gameName === "") { return; } if (favoriteGames.length >= 5) { alert("好きなゲームは最大5つまで選択できます。"); return; } if (favoriteGames.includes(gameName)) { alert("同じゲームは選択できません。"); return; } favoriteGames.push(gameName); input.value = ""; updateFavoriteGames(); } function updateFavoriteGames() { const container = document.getElementById("favoriteGames"); container.innerHTML = ""; favoriteGames.forEach((game, index) => { const div = document.createElement("div"); div.className = "selected-game"; div.innerHTML = ` <span>${game}</span> <button class="remove-game" onclick="removeFavoriteGame(${index})"> 削除 </button> `; container.appendChild(div); }); } function removeFavoriteGame(index) { favoriteGames.splice(index, 1); updateFavoriteGames(); } // ========================================== // 苦手なゲームを追加 // ========================================== function addWeakGame() { const input = document.getElementById("weakGameInput"); const gameName = input.value.trim(); if (gameName === "") { return; } if (weakGames.length >= 5) { alert("苦手なゲームは最大5つまで選択できます。"); return; } if (weakGames.includes(gameName)) { alert("同じゲームは選択できません。"); return; } weakGames.push(gameName); input.value = ""; updateWeakGames(); } function updateWeakGames() { const container = document.getElementById("weakGames"); container.innerHTML = ""; weakGames.forEach((game, index) => { const div = document.createElement("div"); div.className = "selected-game"; div.innerHTML = ` <span>${game}</span> <button class="remove-game" onclick="removeWeakGame(${index})"> 削除 </button> `; container.appendChild(div); }); } function removeWeakGame(index) { weakGames.splice(index, 1); updateWeakGames(); } // ========================================== // 検索 // ========================================== async function searchGames() { const mainGenre = document.querySelector( 'input[name="mainGenre"]:checked' ); const price = document.querySelector( 'input[name="price"]:checked' ); const playStyle = document.querySelector( 'input[name="playStyle"]:checked' ); // 必須項目 if (!mainGenre) { alert( "「一番好きなゲームジャンル」を選択してください。" ); return; } if (!price) { alert( "「価格帯」を選択してください。" ); return; } if (!playStyle) { alert( "「どんな遊び方が好きですか？」を選択してください。" ); return; } // その他好きなジャンル const otherGenres = []; document.querySelectorAll( '#otherRpg:checked, \ #otherAction:checked, \ #otherHorror:checked, \ #otherSurvival:checked, \ #otherSimulation:checked, \ #otherStrategy:checked, \ #otherAdventure:checked, \ #otherPuzzle:checked' ).forEach(input => { otherGenres.push(input.value); }); // 苦手なジャンル const weakGenres = []; document.querySelectorAll( '#weakRpg:checked, \ #weakAction:checked, \ #weakHorror:checked, \ #weakSurvival:checked, \ #weakSimulation:checked, \ #weakStrategy:checked, \ #weakAdventure:checked, \ #weakPuzzle:checked' ).forEach(input => { weakGenres.push(input.value); }); // ========================================== // 回答データ // ========================================== const userData = { mainGenre: mainGenre.value, otherGenres: otherGenres, weakGenres: weakGenres, price: price.value, playStyle: playStyle.value, favoriteGames: favoriteGames, weakGames: weakGames, points: { mainGenre: 20, otherGenre: 7, weakGenre: -10, favoriteGameAttribute: 2, weakGameAttribute: -1 }, attributeCount: 10 }; // ========================================== // Cloudflare Workers // ========================================== const WORKER_URL = "https://steam-game-api.spqntaskuyaiout.workers.dev/"; try { const response = await fetch( WORKER_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(userData) } ); if (!response.ok) { throw new Error( "Workerとの通信に失敗しました。" ); } const result = await response.json(); if (!result.success) { throw new Error( result.message || "Workerでエラーが発生しました。" ); } // 回答データを保存 localStorage.setItem( "gameRecommendationData", JSON.stringify(userData) ); // Workerのテスト結果を保存 localStorage.setItem( "workerTestResult", JSON.stringify(result) ); // 結果ページへ window.location.href = "result.html"; } catch (error) { alert( "検索中にエラーが発生しました。\n\n" + error.message ); console.error(error); } } </script>
+<script> "use strict"; // ========================================== // Cloudflare Worker URL // ========================================== const WORKER_URL = "https://steam-game-api.spqntaskuyaiout.workers.dev/"; // ========================================== // ゲームタイトル // ========================================== const favoriteGames = []; const weakGames = []; // ========================================== // 好きなゲーム追加 // ========================================== function addFavoriteGame() { const input = document.getElementById("favoriteGameInput"); const gameName = input.value.trim(); if (gameName === "") { return; } if (favoriteGames.length >= 5) { alert("好きなゲームは最大5つまでです。"); return; } if (favoriteGames.includes(gameName)) { alert("同じゲームは追加できません。"); return; } favoriteGames.push(gameName); input.value = ""; updateFavoriteGames(); } function updateFavoriteGames() { const container = document.getElementById("favoriteGames"); container.innerHTML = ""; favoriteGames.forEach(function(game, index) { const div = document.createElement("div"); div.className = "selected-game"; const span = document.createElement("span"); span.textContent = game; const button = document.createElement("button"); button.type = "button"; button.className = "remove-game"; button.textContent = "削除"; button.addEventListener( "click", function() { favoriteGames.splice(index, 1); updateFavoriteGames(); } ); div.appendChild(span); div.appendChild(button); container.appendChild(div); }); } // ========================================== // 苦手なゲーム追加 // ========================================== function addWeakGame() { const input = document.getElementById("weakGameInput"); const gameName = input.value.trim(); if (gameName === "") { return; } if (weakGames.length >= 5) { alert("苦手なゲームは最大5つまでです。"); return; } if (weakGames.includes(gameName)) { alert("同じゲームは追加できません。"); return; } weakGames.push(gameName); input.value = ""; updateWeakGames(); } function updateWeakGames() { const container = document.getElementById("weakGames"); container.innerHTML = ""; weakGames.forEach(function(game, index) { const div = document.createElement("div"); div.className = "selected-game"; const span = document.createElement("span"); span.textContent = game; const button = document.createElement("button"); button.type = "button"; button.className = "remove-game"; button.textContent = "削除"; button.addEventListener( "click", function() { weakGames.splice(index, 1); updateWeakGames(); } ); div.appendChild(span); div.appendChild(button); container.appendChild(div); }); } // ========================================== // 検索 // ========================================== async function searchGames() { const mainGenre = document.querySelector( 'input[name="mainGenre"]:checked' ); const price = document.querySelector( 'input[name="price"]:checked' ); const playStyle = document.querySelector( 'input[name="playStyle"]:checked' ); // 必須項目 if (!mainGenre) { alert( "「一番好きなゲームジャンル」を選択してください。" ); return; } if (!price) { alert( "「価格帯」を選択してください。" ); return; } if (!playStyle) { alert( "「どんな遊び方が好きですか？」を選択してください。" ); return; } // その他好きなジャンル const otherGenres = []; document.querySelectorAll( 'input[id^="other"]:checked' ).forEach(function(input) { otherGenres.push(input.value); }); // 苦手ジャンル const weakGenres = []; document.querySelectorAll( 'input[id^="weak"]:checked' ).forEach(function(input) { weakGenres.push(input.value); }); // ========================================== // 送信データ // ========================================== const userData = { mainGenre: mainGenre.value, otherGenres: otherGenres, weakGenres: weakGenres, price: price.value, playStyle: playStyle.value, favoriteGames: [...favoriteGames], weakGames: [...weakGames], points: { mainGenre: 20, otherGenre: 7, weakGenre: -10, favoriteGameAttribute: 2, weakGameAttribute: -1 }, attributeCount: 10 }; // ========================================== // Workerへ送信 // ========================================== try { const response = await fetch( WORKER_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(userData) } ); if (!response.ok) { throw new Error( "Workerとの通信に失敗しました。" ); } const result = await response.json(); if (!result.success) { throw new Error( result.message || "Workerでエラーが発生しました。" ); } // 保存 localStorage.setItem( "gameRecommendationData", JSON.stringify(userData) ); localStorage.setItem( "workerTestResult", JSON.stringify(result) ); // 結果ページへ window.location.href = "result.html"; } catch (error) { console.error(error); alert( "検索中にエラーが発生しました。\n\n" + error.message ); } } // ========================================== // ボタン設定 // ========================================== document .getElementById("favoriteAddButton") .addEventListener( "click", addFavoriteGame ); document .getElementById("weakAddButton") .addEventListener( "click", addWeakGame ); document .getElementById("searchButton") .addEventListener( "click", searchGames ); // ========================================== // Enterキーでも追加 // ========================================== document .getElementById("favoriteGameInput") .addEventListener( "keydown", function(event) { if (event.key === "Enter") { event.preventDefault(); addFavoriteGame(); } } ); document .getElementById("weakGameInput") .addEventListener( "keydown", function(event) { if (event.key === "Enter") { event.preventDefault(); addWeakGame(); } } ); </script>
 
 </body> </html>
