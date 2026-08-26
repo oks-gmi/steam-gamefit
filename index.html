@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Steamゲームさがし</title>
+    <title>おすすめSteamゲーム</title>
 
     <style>
         * {
@@ -36,19 +36,7 @@
             height: 600px;
             margin-top: 40px;
 
-            background: #102235;
-            border: 1px solid #24445d;
-            border-radius: 8px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            color: #71889a;
-            font-size: 13px;
-
-            position: sticky;
-            top: 20px;
+            /* 広告を入れるまでは何も表示しない */
         }
 
         /* 中央 */
@@ -57,15 +45,18 @@
             padding: 50px 0 80px;
         }
 
+        /* タイトル */
         h1 {
             text-align: center;
-            font-size: 34px;
-            margin: 0 0 10px;
+            font-size: 44px;
+            margin: 0 0 15px;
+            font-weight: bold;
         }
 
         .description {
             text-align: center;
-            color: #aebdca;
+            color: #b8c7d4;
+            font-size: 20px;
             margin: 0 0 45px;
         }
 
@@ -211,7 +202,7 @@
             font-size: 14px;
         }
 
-        /* メインボタン */
+        /* 検索ボタン */
         .submit-area {
             margin-top: 35px;
             text-align: center;
@@ -243,19 +234,9 @@
         .bottom-ad {
             width: 100%;
             min-height: 120px;
-
             margin-top: 40px;
 
-            background: #102235;
-            border: 1px solid #24445d;
-            border-radius: 8px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            color: #71889a;
-            font-size: 13px;
+            /* 広告を入れるまでは何も表示しない */
         }
 
         /* スマホ */
@@ -281,7 +262,11 @@
             }
 
             h1 {
-                font-size: 27px;
+                font-size: 32px;
+            }
+
+            .description {
+                font-size: 17px;
             }
 
             .price-list {
@@ -307,21 +292,20 @@
     </style>
 </head>
 
-
 <body>
 
 <div class="page">
 
     <!-- 左広告 -->
     <aside class="side-ad">
-        広告スペース
+        <!-- 後でAdSenseコードをここに入れる -->
     </aside>
 
 
     <!-- メイン -->
     <main class="main">
 
-        <h1>Steamゲームさがし</h1>
+        <h1>おすすめSteamゲーム</h1>
 
         <p class="description">
             あなたに合ったSteamゲームを探します。
@@ -443,7 +427,63 @@
         <!-- ③ -->
         <section class="section">
 
-            <h2>③ 価格帯</h2>
+            <h2>③ 苦手なゲームジャンル</h2>
+
+            <p class="section-note">
+                苦手なゲームジャンルを複数選択できます。
+            </p>
+
+            <div class="choices">
+
+                <div class="choice">
+                    <input type="checkbox" id="weakRpg" value="RPG">
+                    <label for="weakRpg">RPG</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakAction" value="アクション">
+                    <label for="weakAction">アクション</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakHorror" value="ホラー">
+                    <label for="weakHorror">ホラー</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakSurvival" value="サバイバル">
+                    <label for="weakSurvival">サバイバル</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakSimulation" value="シミュレーション">
+                    <label for="weakSimulation">シミュレーション</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakStrategy" value="ストラテジー">
+                    <label for="weakStrategy">ストラテジー</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakAdventure" value="アドベンチャー">
+                    <label for="weakAdventure">アドベンチャー</label>
+                </div>
+
+                <div class="choice">
+                    <input type="checkbox" id="weakPuzzle" value="パズル">
+                    <label for="weakPuzzle">パズル</label>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ④ -->
+        <section class="section">
+
+            <h2>④ 価格帯</h2>
 
             <p class="section-note">
                 遊びたいゲームの価格帯を選択してください。
@@ -486,25 +526,25 @@
         </section>
 
 
-        <!-- ④ -->
+        <!-- ⑤ -->
         <section class="section">
 
-            <h2>④ どんな遊び方が好きですか？</h2>
+            <h2>⑤ どんな遊び方が好きですか？</h2>
 
             <div class="play-style">
 
                 <div class="choice play-choice">
-                    <input type="radio" name="playStyle" id="play1" value="1">
+                    <input type="radio" name="playStyle" id="play1" value="solo">
                     <label for="play1">1人で</label>
                 </div>
 
                 <div class="choice play-choice">
-                    <input type="radio" name="playStyle" id="play2" value="2">
+                    <input type="radio" name="playStyle" id="play2" value="both">
                     <label for="play2">どちらでも</label>
                 </div>
 
                 <div class="choice play-choice">
-                    <input type="radio" name="playStyle" id="play3" value="3">
+                    <input type="radio" name="playStyle" id="play3" value="multi">
                     <label for="play3">みんなで</label>
                 </div>
 
@@ -513,13 +553,13 @@
         </section>
 
 
-        <!-- ⑤ -->
+        <!-- ⑥ -->
         <section class="section">
 
-            <h2>⑤ 好きなゲーム</h2>
+            <h2>⑥ 好きなゲーム</h2>
 
             <p class="section-note">
-                今まで遊んだ中で好きなゲームタイトルを回答してください。選択は最大5つまで、回答なしでも検索可能
+                今まで遊んだ中で好きなゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。
             </p>
 
             <div class="game-search">
@@ -543,13 +583,13 @@
         </section>
 
 
-        <!-- ⑥ -->
+        <!-- ⑦ -->
         <section class="section">
 
-            <h2>⑥ 苦手なゲーム</h2>
+            <h2>⑦ 苦手なゲーム</h2>
 
             <p class="section-note">
-                今まで遊んだ中で自分に合わなかったと思うゲームタイトルを回答してください。選択は最大5つまで、回答なしでも検索可能
+                今まで遊んだ中で自分に合わなかったと思うゲームタイトルを回答してください。選択は最大5つまで。回答なしでも検索可能。
             </p>
 
             <div class="game-search">
@@ -589,7 +629,7 @@
 
         <!-- 下部広告 -->
         <div class="bottom-ad">
-            広告スペース
+            <!-- 後でAdSenseコードをここに入れる -->
         </div>
 
     </main>
@@ -597,7 +637,7 @@
 
     <!-- 右広告 -->
     <aside class="side-ad">
-        広告スペース
+        <!-- 後でAdSenseコードをここに入れる -->
     </aside>
 
 </div>
@@ -605,14 +645,18 @@
 
 <script>
 
-    // 好きなゲーム
-    const favoriteGames = [];
+    // ==========================================
+    // ゲームタイトル
+    // ==========================================
 
-    // 苦手なゲーム
+    const favoriteGames = [];
     const weakGames = [];
 
 
-    // 好きなゲームを追加
+    // ==========================================
+    // 好きなゲーム
+    // ==========================================
+
     function addFavoriteGame() {
 
         const input =
@@ -651,7 +695,6 @@
     }
 
 
-    // 好きなゲームを表示
     function updateFavoriteGames() {
 
         const container =
@@ -684,7 +727,6 @@
     }
 
 
-    // 好きなゲームを削除
     function removeFavoriteGame(index) {
 
         favoriteGames.splice(index, 1);
@@ -693,7 +735,10 @@
     }
 
 
-    // 苦手なゲームを追加
+    // ==========================================
+    // 苦手なゲーム
+    // ==========================================
+
     function addWeakGame() {
 
         const input =
@@ -732,7 +777,6 @@
     }
 
 
-    // 苦手なゲームを表示
     function updateWeakGames() {
 
         const container =
@@ -765,7 +809,6 @@
     }
 
 
-    // 苦手なゲームを削除
     function removeWeakGame(index) {
 
         weakGames.splice(index, 1);
@@ -774,7 +817,10 @@
     }
 
 
-    // ゲーム検索
+    // ==========================================
+    // 検索
+    // ==========================================
+
     function searchGames() {
 
         const mainGenre =
@@ -833,12 +879,54 @@
             'input[type="checkbox"]:checked'
         ).forEach(input => {
 
+            /*
+             * ここでは③の苦手ジャンルも
+             * 一緒に取得されるため、
+             * 後で種類を分ける。
+             */
+
+        });
+
+
+        document.querySelectorAll(
+            '#otherRpg:checked, \
+             #otherAction:checked, \
+             #otherHorror:checked, \
+             #otherSurvival:checked, \
+             #otherSimulation:checked, \
+             #otherStrategy:checked, \
+             #otherAdventure:checked, \
+             #otherPuzzle:checked'
+        ).forEach(input => {
+
             otherGenres.push(input.value);
 
         });
 
 
-        // 入力情報
+        // 苦手ジャンル
+
+        const weakGenres = [];
+
+        document.querySelectorAll(
+            '#weakRpg:checked, \
+             #weakAction:checked, \
+             #weakHorror:checked, \
+             #weakSurvival:checked, \
+             #weakSimulation:checked, \
+             #weakStrategy:checked, \
+             #weakAdventure:checked, \
+             #weakPuzzle:checked'
+        ).forEach(input => {
+
+            weakGenres.push(input.value);
+
+        });
+
+
+        // ==========================================
+        // ユーザーデータ
+        // ==========================================
 
         const userData = {
 
@@ -846,13 +934,35 @@
 
             otherGenres: otherGenres,
 
+            weakGenres: weakGenres,
+
             price: price.value,
 
             playStyle: playStyle.value,
 
             favoriteGames: favoriteGames,
 
-            weakGames: weakGames
+            weakGames: weakGames,
+
+            // 配点設定
+
+            points: {
+
+                mainGenre: 20,
+
+                otherGenre: 7,
+
+                weakGenre: -10,
+
+                favoriteGameAttribute: 2,
+
+                weakGameAttribute: -1
+
+            },
+
+            // ゲームタイトルから判定する属性数
+
+            attributeCount: 10
 
         };
 
