@@ -1,0 +1,727 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>おすすめSteamゲーム - 結果</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans JP", sans-serif;
+            background: #0b1928;
+            color: #e8f0f7;
+            line-height: 1.6;
+        }
+
+        .page {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        /* 左右広告 */
+        .side-ad {
+            width: 160px;
+            min-width: 160px;
+            height: 600px;
+            margin-top: 40px;
+        }
+
+        .main {
+            width: min(900px, 100%);
+            padding: 50px 0 80px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            margin: 0 0 10px;
+        }
+
+        .description {
+            text-align: center;
+            color: #b8c7d4;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        /* 結果カード */
+        .game-card {
+            background: #13283b;
+            border: 1px solid #24445d;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .game-content {
+            padding: 25px;
+        }
+
+        .rank {
+            font-size: 16px;
+            color: #8ec7ee;
+            margin-bottom: 5px;
+        }
+
+        .game-name {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .game-description {
+            color: #bdcbd6;
+            margin-bottom: 15px;
+        }
+
+        .game-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .tag {
+            background: #102235;
+            border: 1px solid #355873;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 13px;
+        }
+
+        .steam-button {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 7px;
+            background: #1b75b5;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .steam-button:hover {
+            background: #258ed0;
+        }
+
+        /* 遊び方 */
+        .play-style-result {
+            background: #102235;
+            border: 1px solid #29475e;
+            border-radius: 10px;
+            padding: 15px 18px;
+            margin-bottom: 30px;
+        }
+
+        .play-style-result strong {
+            color: #8ec7ee;
+        }
+
+        /* 最初からやり直す */
+        .retry-area {
+            text-align: center;
+            margin-top: 45px;
+        }
+
+        .retry-button {
+            display: inline-block;
+            width: min(650px, 100%);
+            padding: 19px;
+
+            border-radius: 10px;
+
+            background: #1b75b5;
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+        .retry-button:hover {
+            background: #258ed0;
+        }
+
+        /* 下部広告 */
+        .bottom-ad {
+            width: 100%;
+            min-height: 120px;
+            margin-top: 45px;
+        }
+
+        /* エラー */
+        .error {
+            text-align: center;
+            background: #13283b;
+            border: 1px solid #24445d;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        @media (max-width: 1150px) {
+            .side-ad {
+                display: none;
+            }
+
+            .page {
+                width: 100%;
+            }
+
+            .main {
+                width: min(900px, 92%);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .main {
+                padding-top: 35px;
+            }
+
+            h1 {
+                font-size: 31px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .game-content {
+                padding: 20px;
+            }
+
+            .game-name {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- 左広告 -->
+    <aside class="side-ad">
+        <!-- 後でAdSenseコードをここに入れる -->
+    </aside>
+
+
+    <main class="main">
+
+        <h1>おすすめSteamゲーム</h1>
+
+        <p class="description">
+            あなたの回答から相性の良いゲームを3つ選びました。
+        </p>
+
+
+        <!-- 遊び方の判定 -->
+        <div id="playStyleResult"></div>
+
+
+        <!-- おすすめゲーム -->
+        <div id="results"></div>
+
+
+        <!-- もう一度検索 -->
+        <div class="retry-area">
+
+            <a href="index.html" class="retry-button">
+                もう一度おすすめゲームを探す
+            </a>
+
+        </div>
+
+
+        <!-- 下部広告 -->
+        <div class="bottom-ad">
+            <!-- 後でAdSenseコードをここに入れる -->
+        </div>
+
+    </main>
+
+
+    <!-- 右広告 -->
+    <aside class="side-ad">
+        <!-- 後でAdSenseコードをここに入れる -->
+    </aside>
+
+</div>
+
+
+<script>
+
+    // ==========================================
+    // 仮ゲームデータ
+    // ==========================================
+
+    /*
+     * 今は動作確認用。
+     *
+     * 後でSteam APIなどから実際のゲーム情報を取得する。
+     *
+     * attributesは主要属性10個まで。
+     */
+
+    const games = [
+
+        {
+            name: "サンプルRPG",
+            genres: ["RPG"],
+            attributes: [
+                "ストーリー重視",
+                "探索",
+                "戦闘",
+                "育成",
+                "オープンワールド",
+                "クエスト",
+                "キャラクター重視",
+                "アイテム収集",
+                "自由度",
+                "やり込み"
+            ],
+            price: 3000,
+            playStyle: "solo",
+            popularity: 90,
+            description: "ストーリーや探索を楽しめるRPGのサンプルです。",
+            steamUrl: "#"
+        },
+
+        {
+            name: "サンプルホラー",
+            genres: ["ホラー"],
+            attributes: [
+                "ホラー",
+                "探索",
+                "謎解き",
+                "緊張感",
+                "ストーリー重視",
+                "戦闘",
+                "アイテム収集",
+                "調査",
+                "やり込み",
+                "サバイバル"
+            ],
+            price: 2000,
+            playStyle: "multi",
+            popularity: 85,
+            description: "探索や謎解きを楽しむホラーゲームのサンプルです。",
+            steamUrl: "#"
+        },
+
+        {
+            name: "サンプルアクション",
+            genres: ["アクション"],
+            attributes: [
+                "アクション",
+                "戦闘",
+                "探索",
+                "ボス戦",
+                "育成",
+                "アイテム収集",
+                "自由度",
+                "やり込み",
+                "難易度",
+                "リプレイ性"
+            ],
+            price: 1500,
+            playStyle: "solo",
+            popularity: 80,
+            description: "戦闘を中心に楽しめるアクションゲームのサンプルです。",
+            steamUrl: "#"
+        }
+
+    ];
+
+
+    // ==========================================
+    // 診断結果を取得
+    // ==========================================
+
+    const savedData =
+        localStorage.getItem("gameRecommendationData");
+
+
+    if (!savedData) {
+
+        document.getElementById("results").innerHTML = `
+            <div class="error">
+                <p>診断データがありません。</p>
+
+                <a href="index.html" class="retry-button">
+                    診断ページへ戻る
+                </a>
+            </div>
+        `;
+
+    } else {
+
+        const userData =
+            JSON.parse(savedData);
+
+        showResults(userData);
+
+    }
+
+
+    // ==========================================
+    // 結果計算
+    // ==========================================
+
+    function showResults(userData) {
+
+        const results = [];
+
+
+        games.forEach(game => {
+
+            // ----------------------------------
+            // ①② ジャンルによる候補絞り込み
+            // ----------------------------------
+
+            const selectedGenres = [
+                userData.mainGenre,
+                ...userData.otherGenres
+            ];
+
+            const genreMatch =
+                game.genres.some(
+                    genre => selectedGenres.includes(genre)
+                );
+
+
+            if (!genreMatch) {
+                return;
+            }
+
+
+            // ----------------------------------
+            // 価格
+            // ----------------------------------
+
+            if (
+                userData.price !== "any" &&
+                game.price > Number(userData.price)
+            ) {
+                return;
+            }
+
+
+            // ----------------------------------
+            // 相性ポイント
+            // ----------------------------------
+
+            let score = 0;
+
+
+            // ① 一番好きなジャンル
+            if (
+                game.genres.includes(userData.mainGenre)
+            ) {
+
+                score += 20;
+
+            }
+
+
+            // ② その他好きなジャンル
+            userData.otherGenres.forEach(genre => {
+
+                if (game.genres.includes(genre)) {
+
+                    score += 7;
+
+                }
+
+            });
+
+
+            // ③ 苦手なジャンル
+            userData.weakGenres.forEach(genre => {
+
+                if (game.genres.includes(genre)) {
+
+                    score -= 10;
+
+                }
+
+            });
+
+
+            // ----------------------------------
+            // ⑥ 好きなゲーム
+            // ----------------------------------
+
+            /*
+             * 今はゲーム名ではなく、
+             * 仮ゲームデータの属性を比較する。
+             *
+             * 実際には入力されたゲームタイトルから
+             * Steamのゲーム情報を取得して、
+             * 主要属性10個を作る。
+             */
+
+            const favoriteAttributes = [];
+
+
+            userData.favoriteGames.forEach(() => {
+
+                /*
+                 * 後で実装
+                 *
+                 * ここで入力されたゲームの
+                 * 主要属性10個を取得する。
+                 */
+
+            });
+
+
+            // ----------------------------------
+            // ⑦ 苦手なゲーム
+            // ----------------------------------
+
+            const weakAttributes = [];
+
+
+            userData.weakGames.forEach(() => {
+
+                /*
+                 * 後で実装
+                 *
+                 * ここで入力されたゲームの
+                 * 主要属性10個を取得する。
+                 */
+
+            });
+
+
+            /*
+             * 現在は属性取得部分が未実装なので、
+             * 実際の属性点は後でここに追加する。
+             */
+
+
+            // ----------------------------------
+            // 結果
+            // ----------------------------------
+
+            results.push({
+
+                game: game,
+
+                score: score
+
+            });
+
+        });
+
+
+        // ==========================================
+        // 順位決定
+        // ==========================================
+
+        results.sort((a, b) => {
+
+            // まず相性ポイント
+            if (b.score !== a.score) {
+
+                return b.score - a.score;
+
+            }
+
+            // 同点なら人気度
+            return b.game.popularity -
+                   a.game.popularity;
+
+        });
+
+
+        // ==========================================
+        // 上位3作品
+        // ==========================================
+
+        const topGames =
+            results.slice(0, 3);
+
+
+        displayResults(
+            topGames,
+            userData
+        );
+
+    }
+
+
+    // ==========================================
+    // 結果表示
+    // ==========================================
+
+    function displayResults(topGames, userData) {
+
+        const container =
+            document.getElementById("results");
+
+
+        if (topGames.length === 0) {
+
+            container.innerHTML = `
+                <div class="error">
+                    <p>
+                        条件に合うゲームが見つかりませんでした。
+                    </p>
+
+                    <a href="index.html" class="retry-button">
+                        もう一度おすすめゲームを探す
+                    </a>
+                </div>
+            `;
+
+            return;
+        }
+
+
+        topGames.forEach((result, index) => {
+
+            const game =
+                result.game;
+
+
+            const tags =
+                game.genres
+                    .map(
+                        genre =>
+                        `<span class="tag">${genre}</span>`
+                    )
+                    .join("");
+
+
+            const card =
+                document.createElement("div");
+
+            card.className = "game-card";
+
+
+            card.innerHTML = `
+
+                <div class="game-content">
+
+                    <div class="rank">
+                        ${index + 1}位
+                    </div>
+
+                    <div class="game-name">
+                        ${game.name}
+                    </div>
+
+                    <div class="score">
+                        相性ポイント：${result.score}点
+                    </div>
+
+                    <div class="game-description">
+                        ${game.description}
+                    </div>
+
+                    <div class="game-info">
+                        ${tags}
+
+                        <span class="tag">
+                            ${game.price.toLocaleString()}円
+                        </span>
+                    </div>
+
+                    <a
+                        class="steam-button"
+                        href="${game.steamUrl}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Steamで見る
+
+                    </a>
+
+                </div>
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+
+        // 遊び方の表示
+        showPlayStyle(userData);
+
+    }
+
+
+    // ==========================================
+    // 遊び方の判定
+    // ==========================================
+
+    function showPlayStyle(userData) {
+
+        const container =
+            document.getElementById("playStyleResult");
+
+
+        let text = "";
+
+
+        if (userData.playStyle === "solo") {
+
+            text =
+                "1人で遊ぶのに向いているゲームを優先しています。";
+
+        }
+
+        else if (userData.playStyle === "multi") {
+
+            text =
+                "みんなで遊ぶのに向いているゲームを優先しています。";
+
+        }
+
+        else {
+
+            text =
+                "1人でもみんなでも遊びやすいゲームを探しています。";
+
+        }
+
+
+        container.innerHTML = `
+
+            <div class="play-style-result">
+
+                <strong>遊び方について</strong><br>
+
+                ${text}
+
+            </div>
+
+        `;
+
+    }
+
+</script>
+
+</body>
+</html>
+```
